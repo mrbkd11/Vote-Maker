@@ -1,0 +1,7 @@
+<div *ngFor="let voteReview of voteReviews">
+    <h3>{{ voteReview.question }}</h3>
+    <p>Oui: {{ voteReview.oui }}</p>
+    <p>Non: {{ voteReview.non }}</p>
+    <p>Abstention: {{ voteReview.q }}</p>
+    <p>Total count: {{ voteReview.total_count }}</p>
+</div>

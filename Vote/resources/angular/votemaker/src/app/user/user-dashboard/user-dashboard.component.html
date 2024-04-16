@@ -1,0 +1,15 @@
+<div
+    class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
+    <div *ngIf="currentUser">
+        <h2>Welcome, {{ currentUser.name }} (ID: {{ currentUser.id }})</h2>
+    </div>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a *ngIf="this.authService.isLoggedIn" class="p-2 text-dark">User Profile</a>
+        <a *ngIf="!this.authService.isLoggedIn" class="p-2 text-dark" routerLinkActive="active" routerLink="/login">Sign
+            in</a>
+    </nav>
+    <div *ngIf="activeVote">
+        <button class="btn btn-danger" [disabled]=" !activeVote" (click)="goToSubmitVote()">Submit Vote</button>
+    </div>
+    <button (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button" class="btn btn-danger">Logout</button>
+</div>

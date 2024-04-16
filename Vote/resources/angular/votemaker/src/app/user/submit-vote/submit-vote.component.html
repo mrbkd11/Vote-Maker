@@ -1,0 +1,23 @@
+<!-- <form #voteForm="ngForm" (ngSubmit)="onSubmit(voteForm)"> -->
+<form action="">
+    <div class="form-group">
+        <label for="question">Question:</label>
+        <input type="text" class="form-control" id="question" name="question" [(ngModel)]="question" required>
+    </div>
+    <div class="form-group">
+        <label for="choice1">Yes:</label>
+        <input type="radio" class="form-control" id="choice1" name="choice" value="yes" [(ngModel)]="selectedChoice"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="choice2">No:</label>
+        <input type="radio" class="form-control" id="choice2" name="choice" value="no" [(ngModel)]="selectedChoice"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="choice3">Abstain:</label>
+        <input type="radio" class="form-control" id="choice3" name="choice" value="abstain" [(ngModel)]="selectedChoice"
+            required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!activeVote">Submit</button>
+</form>
